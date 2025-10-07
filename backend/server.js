@@ -71,9 +71,15 @@ server.listen(PORT, '0.0.0.0', async () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📡 API available at http://localhost:${PORT}/api`);
   console.log(`🔌 Socket.io ready for connections`);
+  console.log(`🌐 Environment: ${process.env.NODE_ENV || 'development'}`);
   
   // Test database connection
-  await testConnection();
+  try {
+    await testConnection();
+  } catch (error) {
+    console.error('❌ Database connection failed:', error.message);
+    console.log('💡 Make sure database environment variables are set correctly');
+  }
 });
 
 module.exports = { app, server, io };
