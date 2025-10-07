@@ -54,7 +54,7 @@ io.on('connection', (socket) => {
 });
 
 // Start server
-server.listen(PORT, async () => {
+server.listen(PORT, '0.0.0.0', async () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📡 API available at http://localhost:${PORT}/api`);
   console.log(`🔌 Socket.io ready for connections`);
