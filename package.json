@@ -1,0 +1,24 @@
+{
+  "name": "havijchat",
+  "version": "1.0.0",
+  "description": "HavijChat - Full-stack real-time chat application",
+  "scripts": {
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "install:all": "npm run install:backend && npm run install:frontend",
+    "setup:db": "cd backend && node scripts/setup-db.js",
+    "setup:db:simple": "cd backend && node scripts/setup-db-simple.js",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm start",
+    "start:backend": "cd backend && npm start",
+    "build:frontend": "cd frontend && npm run build",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "start": "concurrently \"npm run start:backend\" \"npm run dev:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "keywords": ["chat", "real-time", "socket.io", "react", "express", "mysql"],
+  "author": "HavijChat Team",
+  "license": "MIT"
+}
